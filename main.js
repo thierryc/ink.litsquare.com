@@ -3,9 +3,12 @@
 const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
 const canAnimate = !prefersReducedMotion && typeof Typed === "function";
 
-const FINAL_TAGLINE = "A native Markdown editor for Markdown lover. Made with ♥️ upstate NY.";
+const FINAL_TAGLINE = "A native Markdown editor for Markdown lover.";
 const DIVIDER_FOR_BLOCK = "\n\n---\n\n";
-const DIVIDER_FOR_ERASE = "\n\n---";
+const DIVIDER_FOR_ERASE = "\n\n---\n\n";
+
+let storyTyped = null;
+let storyPaused = false;
 
 const INTRO_STATES = [
   "A distraction-free",
@@ -21,9 +24,9 @@ const FEATURE_BLOCKS = [
   "Open a file. Start typing.\nKeep going.",
   "Markdown stays plain text.\nNo lock-in. No weird formats.",
   "See your Markdown as you write it.\nClean typography. Subtle syntax colors.",
-  "Wrap lines|don’t wrap lines.\nReading mode|full width.\nYour call.",
+  "Wrap lines|Don’t wrap lines.\nReading mode|full width.\nYour call.",
   "Use headings to shape a document.\nJump with a table of contents.",
-  "Preview what you’re making.\nGitHub-style Markdown, code highlighting, math.",
+  "Preview what you’re making.\nGitHub-style Markdown, code highlighting, math, image inline preview.",
   "Copy as Rich Text when you need to paste into email|Docs|Pages.\nExport RTF when you need a file.",
   "Find in this document.\nOr keep searching across visited files.",
   "Themes are part of your workspace.\nImport|export a `litsquareink.config.json` and share it.",
@@ -177,12 +180,55 @@ function buildStoryFrames() {
 
 function renderFallback(storyEl) {
   const firstBlock = FEATURE_BLOCKS[0];
-  storyEl.textContent = `${FINAL_TAGLINE}${DIVIDER}${firstBlock}`;
+  storyEl.textContent = `${FINAL_TAGLINE}${DIVIDER_FOR_BLOCK}${firstBlock}`;
+}
+
+function updateAnimationToggleUI(buttonEl) {
+  if (!buttonEl) return;
+
+  const state = storyPaused ? "paused" : "playing";
+  buttonEl.dataset.animationState = state;
+
+  if (!canAnimate) {
+    buttonEl.disabled = true;
+    buttonEl.setAttribute("aria-label", "Animation unavailable");
+    buttonEl.setAttribute("aria-disabled", "true");
+    return;
+  }
+
+  buttonEl.disabled = false;
+  buttonEl.removeAttribute("aria-disabled");
+  buttonEl.setAttribute("aria-label", storyPaused ? "Play animation" : "Pause animation");
+}
+
+function bindAnimationToggle() {
+  const buttonEl = document.querySelector('[data-action="toggle-animation"]');
+  if (!buttonEl) return;
+
+  updateAnimationToggleUI(buttonEl);
+
+  if (buttonEl.dataset.bound === "true") return;
+  buttonEl.dataset.bound = "true";
+
+  buttonEl.addEventListener("click", () => {
+    if (!canAnimate || !storyTyped) return;
+
+    storyPaused = !storyPaused;
+    if (storyPaused) {
+      storyTyped.stop();
+    } else {
+      storyTyped.start();
+    }
+
+    updateAnimationToggleUI(buttonEl);
+  });
 }
 
 function initStory() {
   const storyEl = document.getElementById("storyText");
   if (!storyEl) return;
+
+  bindAnimationToggle();
 
   if (!canAnimate) {
     renderFallback(storyEl);
@@ -196,7 +242,7 @@ function initStory() {
 
   // Single narrative engine: each next string represents the next "human" state.
   // smartBackspace gives us partial erases so it feels like edits, not full resets.
-  new Typed(storyEl, {
+  storyTyped = new Typed(storyEl, {
     strings,
     typeSpeed: 34,
     backSpeed: 22,
@@ -207,6 +253,9 @@ function initStory() {
     cursorChar: "▌",
     contentType: "null",
   });
+
+  storyPaused = false;
+  bindAnimationToggle();
 }
 
 if (document.readyState === "loading") {

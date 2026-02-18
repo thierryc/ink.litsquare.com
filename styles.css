@@ -189,6 +189,14 @@ button {
   cursor: default;
 }
 
+.pill-btn--interactive {
+  cursor: pointer;
+}
+
+.pill-btn[data-animation-state="paused"] .icon-img {
+  opacity: 0.55;
+}
+
 .icon-img {
   width: 18px;
   height: 18px;
