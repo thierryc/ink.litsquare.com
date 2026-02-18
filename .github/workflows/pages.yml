@@ -35,6 +35,7 @@ jobs:
           rm -rf _site
           mkdir -p _site
           cp index.html styles.css main.js _site/
+          cp CNAME _site/
           cp -R src _site/src
 
       - name: Upload artifact
