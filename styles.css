@@ -10,6 +10,7 @@
   --text: #272727;
   --accent: #2d6ad2;
   --toolbar-text: #ffffff;
+  --appstore-hover-shadow: drop-shadow(0 18px 60px rgba(0, 0, 0, 0.28));
 
   --stage-pad: clamp(16px, 5vw, 40px);
   --page-pad: 9px;
@@ -289,6 +290,23 @@ code {
   justify-content: center;
   line-height: 0;
   text-decoration: none;
+  border-radius: 14px;
+  transform: translateY(0);
+  transition: transform 180ms ease;
+  will-change: transform;
+}
+
+.appstore-badge:hover {
+  transform: translateY(-2px);
+}
+
+.appstore-badge:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.appstore-badge:focus-visible {
+  outline: 2px solid rgba(45, 106, 210, 0.55);
+  outline-offset: 4px;
 }
 
 .appstore-badge__img {
@@ -297,6 +315,23 @@ code {
   aspect-ratio: 245 / 82;
   vertical-align: middle;
   object-fit: contain;
+  transition: filter 180ms ease;
+}
+
+.appstore-badge:hover .appstore-badge__img {
+  filter: var(--appstore-hover-shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .appstore-badge,
+  .appstore-badge__img {
+    transition: none;
+  }
+
+  .appstore-badge:hover,
+  .appstore-badge:active {
+    transform: none;
+  }
 }
 
 .toolbar {
