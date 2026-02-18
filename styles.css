@@ -2,6 +2,7 @@
   --bg: #3e7e96;
   --page-bg: #ffffff;
   --page-border-color: rgba(0, 0, 0, 0.3);
+  --page-shadow: 0 40px 140px rgba(0, 0, 0, 0.28);
   --pill-bg: #fdfdfd;
   --pill-border-color: rgba(255, 255, 255, 1);
   --pill-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
@@ -100,6 +101,7 @@ button {
   background: var(--page-bg);
   border: var(--hairline) solid var(--page-border-color);
   border-radius: var(--page-radius);
+  box-shadow: var(--page-shadow);
   padding: var(--page-pad);
   display: flex;
   flex-direction: column;
