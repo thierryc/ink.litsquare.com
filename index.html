@@ -49,8 +49,10 @@
     </script>
   </head>
   <body>
-    <main class="stage">
-      <section class="page" data-node-id="2191:172" aria-label="LitSquare Ink MD">
+    <main class="landing">
+      <section class="hero" aria-label="LitSquare Ink MD intro">
+        <div class="hero-shell">
+          <section class="page" data-node-id="2191:172" aria-label="LitSquare Ink MD">
             <header class="header" data-node-id="2191:173">
               <div class="header-left" data-node-id="2191:174">
                 <div class="traffic" aria-hidden="true" data-node-id="2191:175">
@@ -104,7 +106,7 @@
                     <ul>
                       <li>Plain-text Markdown editing</li>
                       <li>Live preview with clean typography</li>
-                      <li>Export & copy as rich text</li>
+                      <li>Export &amp; copy as rich text</li>
                       <li>Theme configuration you can share</li>
                     </ul>
                   </noscript>
@@ -115,7 +117,7 @@
             <footer class="footer" data-node-id="2191:188">
               <a
                 class="appstore-badge"
-                href="https://apps.apple.com/us/app/litsquare-ink-md/id6757229815?mt=12&itscg=30200&itsct=apps_box_badge&mttnsubad=6757229815"
+                href="https://apps.apple.com/us/app/litsquare-ink-md/id6757229815?mt=12&amp;itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6757229815"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -152,6 +154,146 @@
                 </button>
               </div>
             </footer>
+          </section>
+        </div>
+      </section>
+
+      <section class="features-section" aria-labelledby="features-title">
+        <div class="section-panel">
+          <div class="section-copy">
+            <p class="section-kicker">Built for writing on macOS</p>
+            <h2 class="section-title" id="features-title">A full-screen intro, then the whole product story.</h2>
+            <p class="section-lede">
+              LitSquare Ink MD starts simple on the first screen, then opens into a deeper native toolset for writing,
+              previewing, exporting, citations, transcripts, automation, and AI-assisted editing.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card" aria-labelledby="feature-core-editing">
+              <h3 class="feature-card__title" id="feature-core-editing">Core Editing</h3>
+              <ul class="feature-list">
+                <li>Markdown editor built on AppKit and TextKit 2 for large-text editing.</li>
+                <li>Multi-window document workflow through macOS <code>DocumentGroup</code>.</li>
+                <li>Opens and edits <code>.md</code>, <code>.mdx</code>, <code>.srt</code>, <code>.vtt</code>, and plain text files.</li>
+                <li>
+                  Live Markdown styling for headings, bold, italic, underline, strikethrough, inline code, fenced
+                  code, and optional <code>==highlight==</code>.
+                </li>
+                <li>
+                  Formatting commands and shortcuts for bold, italic, bold+italic, underline, strikethrough, inline
+                  code, highlight, cycle heading, and remove heading.
+                </li>
+                <li>Show Invisibles toggle.</li>
+                <li>Built-in find bar with next, previous, and use-selection-for-find.</li>
+                <li>Table of contents sidebar with heading-level filters and jump-to-heading.</li>
+                <li>Document and selection counts, including token estimates.</li>
+                <li>Dictation and text-to-speech for the selection or whole document.</li>
+                <li>Auto-reload of clean documents changed on disk.</li>
+                <li>Experimental dynamic untitled filename suggestions.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" aria-labelledby="feature-preview-export">
+              <h3 class="feature-card__title" id="feature-preview-export">Preview and Export</h3>
+              <ul class="feature-list">
+                <li>Separate live Preview window.</li>
+                <li>
+                  Markdown preview with syntax highlighting, math via KaTeX, footnotes, relative links, and optional
+                  highlight syntax.
+                </li>
+                <li>Preview templates that affect preview, print, HTML export, and PDF export.</li>
+                <li>Template import, remove, and reveal actions in Settings.</li>
+                <li>Export as HTML, PDF, RTF, and Word <code>.docx</code>.</li>
+                <li>Copy as rich text.</li>
+                <li>Create email using a rich-text body.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" aria-labelledby="feature-reference-tools">
+              <h3 class="feature-card__title" id="feature-reference-tools">Insert and Reference Tools</h3>
+              <ul class="feature-list">
+                <li>Insert footnotes and named footnotes.</li>
+                <li>Insert images, links, and audio, video, or PDF media links.</li>
+                <li>Zotero integration for citations and footnotes from citations.</li>
+                <li>Image preview actions that create a caption or extract text under the image.</li>
+                <li>Insert Image as Text and Paste Image as Text using Apple Intelligence.</li>
+                <li>Smart pasted-image filename suggestions on supported macOS versions.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" aria-labelledby="feature-ai">
+              <h3 class="feature-card__title" id="feature-ai">AI Features</h3>
+              <ul class="feature-list">
+                <li>Prompt window that runs on the selection, current paragraph, or full document.</li>
+                <li>
+                  Built-in commands for Proofread, Rewrite for clarity, Custom prompt, Summarize, Translate, Generate
+                  outline, Generate title options, Extract glossary, Extract actions, Generate front matter, Ask this
+                  document, and Convert to checklist.
+                </li>
+                <li>Diff view before applying AI changes.</li>
+                <li>Support for Apple Intelligence, Ollama, and OpenAI-compatible APIs.</li>
+                <li>Per-command model settings and Keychain-backed API key storage.</li>
+                <li>Guardrails for proofread output and code-block preservation.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" aria-labelledby="feature-transcript">
+              <h3 class="feature-card__title" id="feature-transcript">Transcript and Subtitle Tools</h3>
+              <ul class="feature-list">
+                <li>Import transcript from audio or video with macOS speech recognition.</li>
+                <li>Output transcript as Markdown, WebVTT, or SubRip.</li>
+                <li>Live transcription preview while importing.</li>
+                <li>Adjustable subtitle cue duration.</li>
+                <li>Remembers the last transcription language.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" aria-labelledby="feature-settings">
+              <h3 class="feature-card__title" id="feature-settings">Settings, Themes, Help, and Automation</h3>
+              <ul class="feature-list">
+                <li>Settings tabs for General, Editor, Zotero, AI, Command, Theme, and Performance.</li>
+                <li>
+                  Adjustable editor font size, line height, wrap lines, reading mode, preview behavior, and export
+                  settings.
+                </li>
+                <li>
+                  Theme editing with per-role colors plus JSON import and export via
+                  <code>litsquareink.config.json</code>.
+                </li>
+                <li>Help center with in-app Markdown tutorials, what’s new, and Markdown flavor guides.</li>
+                <li>
+                  App Intents for Shortcuts and Siri, including document access, text replacement, selection
+                  formatting, export, and AI command execution.
+                </li>
+                <li>Custom <code>litsquareink://</code> deep links for opening files and folders.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section" aria-labelledby="cta-title">
+        <div class="cta-panel">
+          <p class="section-kicker">Ready to write</p>
+          <h2 class="section-title" id="cta-title">Download LitSquare Ink MD for macOS.</h2>
+          <p class="section-lede">
+            Stay in plain text, keep your Markdown readable, and reach for preview, export, transcripts, citations,
+            automation, or AI only when you need them.
+          </p>
+          <a
+            class="appstore-badge"
+            href="https://apps.apple.com/us/app/litsquare-ink-md/id6757229815?mt=12&amp;itscg=30200&amp;itsct=apps_box_badge&amp;mttnsubad=6757229815"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="appstore-badge__img"
+              src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1767916800"
+              alt="Download on the App Store"
+            />
+          </a>
+        </div>
       </section>
     </main>
 
