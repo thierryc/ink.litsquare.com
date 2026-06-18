@@ -99,6 +99,7 @@ Remote AI only when you choose it.
 ## Features that make the difference
 
 - [v2] Project Palette for Markdown folders, docs, notes, books, OKF bundles, and local Git clones
+- Built-in OKF project support: create, open, and manage OKF Knowledge Bundles as Markdown folders
 - Copy or drag Markdown links from project files and headings into the active editor
 - [v2] Shortcuts and Siri project actions for files, headings, citations, and tags
 - Preview templates (make preview/print/export match your style)
