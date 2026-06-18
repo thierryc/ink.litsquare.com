@@ -6,7 +6,7 @@
     <title>LitSquare Ink MD — Native Markdown editor for macOS</title>
     <meta
       name="description"
-      content="LitSquare Ink MD is a native macOS Markdown editor. Write in plain text, preview as you type, and export clean documents with themes, shortcuts, and subtle syntax colors."
+      content="LitSquare Ink MD is a native macOS Markdown editor with a Project Palette for Markdown folders, live preview, clean export, and Mac-native automation."
     />
     <link rel="canonical" href="https://ink.litsquare.com/" />
     <meta name="robots" content="index,follow" />
@@ -15,7 +15,7 @@
     <meta property="og:title" content="LitSquare Ink MD — Native Markdown editor for macOS" />
     <meta
       property="og:description"
-      content="A native macOS Markdown editor. Write in plain text, preview as you type, and export clean documents with themes and shortcuts."
+      content="A native macOS Markdown editor with Project Palette, live preview, clean export, AppleScript automation, and Shortcuts support."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ink.litsquare.com/" />
@@ -28,7 +28,7 @@
     <meta name="twitter:title" content="LitSquare Ink MD — Native Markdown editor for macOS" />
     <meta
       name="twitter:description"
-      content="A native macOS Markdown editor. Write in plain text, preview as you type, and export clean documents with themes and shortcuts."
+      content="A native macOS Markdown editor with Project Palette, live preview, clean export, AppleScript automation, and Shortcuts support."
     />
     <meta name="twitter:image" content="https://ink.litsquare.com/src/image.webp" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
@@ -41,7 +41,7 @@
         "name": "LitSquare Ink MD",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "macOS",
-        "description": "A native macOS Markdown editor. Write in plain text, preview as you type, and export clean documents with themes and shortcuts.",
+        "description": "A native macOS Markdown editor with a Project Palette for Markdown folders, live preview, clean export, and Mac-native automation.",
         "url": "https://ink.litsquare.com/",
         "downloadUrl": "https://apps.apple.com/us/app/litsquare-ink-md/id6757229815",
         "image": "https://ink.litsquare.com/src/image.webp"
@@ -105,8 +105,10 @@
                     </p>
                     <ul>
                       <li>Plain-text Markdown editing</li>
+                      <li>Project Palette for Markdown folders</li>
                       <li>Live preview with clean typography</li>
                       <li>Export &amp; copy as rich text</li>
+                      <li>AppleScript automation</li>
                       <li>Theme configuration you can share</li>
                     </ul>
                   </noscript>
@@ -165,7 +167,8 @@
             <h2 class="section-title" id="features-title">A full-screen intro, then the whole product story.</h2>
             <p class="section-lede">
               LitSquare Ink MD starts simple on the first screen, then opens into a deeper native toolset for writing,
-              previewing, exporting, citations, transcripts, automation, and AI-assisted editing.
+              browsing Markdown projects, previewing, exporting, citations, transcripts, Mac-native automation, and
+              AI-assisted editing.
             </p>
           </div>
 
@@ -191,6 +194,22 @@
                 <li>Dictation and text-to-speech for the selection or whole document.</li>
                 <li>Auto-reload of clean documents changed on disk.</li>
                 <li>Experimental dynamic untitled filename suggestions.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" aria-labelledby="feature-project-palette">
+              <h3 class="feature-card__title" id="feature-project-palette">
+                Project Palette <span class="version-tag">[v2]</span>
+              </h3>
+              <ul class="feature-list">
+                <li>Open Markdown folders in a companion explorer window without replacing the focused editor.</li>
+                <li>Browse folders, Markdown files, headings, citations, tags, resources, and Git status.</li>
+                <li>Expand Markdown files, filter visible heading levels, and keep H1 headings visible.</li>
+                <li>Copy or drag Markdown links to files and headings back into the active document.</li>
+                <li>
+                  Project indexing supports OKF bundles, books, documentation sets, notes, general Markdown folders,
+                  and local Git repository clones.
+                </li>
               </ul>
             </article>
 
@@ -250,7 +269,7 @@
             </article>
 
             <article class="feature-card" aria-labelledby="feature-settings">
-              <h3 class="feature-card__title" id="feature-settings">Settings, Themes, Help, and Automation</h3>
+              <h3 class="feature-card__title" id="feature-settings">Settings, Themes, and Help</h3>
               <ul class="feature-list">
                 <li>Settings tabs for General, Editor, Zotero, AI, Command, Theme, and Performance.</li>
                 <li>
@@ -262,12 +281,42 @@
                   <code>litsquareink.config.json</code>.
                 </li>
                 <li>Help center with in-app Markdown tutorials, what’s new, and Markdown flavor guides.</li>
-                <li>
-                  App Intents for Shortcuts and Siri, including document access, text replacement, selection
-                  formatting, export, and AI command execution.
-                </li>
                 <li>Custom <code>litsquareink://</code> deep links for opening files and folders.</li>
               </ul>
+            </article>
+
+            <article class="feature-card feature-card--wide" aria-labelledby="feature-automation">
+              <h3 class="feature-card__title" id="feature-automation">Automation</h3>
+              <p class="feature-card__body">
+                Automate Ink from AppleScript with the new command-only <strong>Ink Scripting</strong> dictionary. Read
+                or update Markdown, append notes, format the current selection, and export HTML, PDF, RTF, or DOCX from
+                scripts and automation tools.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  AppleScript support for Script Editor, <code>osascript</code>, Raycast, Alfred, Keyboard Maestro,
+                  shell scripts, and other Apple Events clients.
+                </li>
+                <li>
+                  List open documents, get current document text, replace text, append text, read or replace the
+                  selection, format the selection, and export documents.
+                </li>
+                <li>Export HTML, PDF, RTF, or DOCX from scripts without showing a save panel.</li>
+                <li>Targets the active document by default, with exact targeting by document ID or file path.</li>
+                <li>
+                  <span class="version-tag">[v2]</span> Build Shortcuts that act on open projects, then run them from
+                  Siri through App Intents. Search indexed project files, headings, citations, and tags alongside the
+                  existing document actions.
+                </li>
+                <li>
+                  Remote AI providers stay blocked unless you explicitly allow them for a Shortcut run. No local server
+                  required. Ink receives user-authorized Apple Events and App Intents, keeping automation native to
+                  macOS.
+                </li>
+              </ul>
+              <pre class="script-example"><code>osascript -e 'tell application "LitSquare MD" to get ink text'
+osascript -e 'tell application "LitSquare MD" to append ink text "Next note" separator double newline'
+osascript -e 'tell application "LitSquare MD" to export ink document as PDF'</code></pre>
             </article>
           </div>
         </div>
@@ -279,7 +328,7 @@
           <h2 class="section-title" id="cta-title">Download LitSquare Ink MD for macOS.</h2>
           <p class="section-lede">
             Stay in plain text, keep your Markdown readable, and reach for preview, export, transcripts, citations,
-            automation, or AI only when you need them.
+            project browsing, automation, or AI only when you need them.
           </p>
           <a
             class="appstore-badge"
